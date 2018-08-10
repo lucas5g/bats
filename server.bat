@@ -7,6 +7,12 @@ set pc=%userprofile%\desktop\
 set verifica_arquivo=%pc%%arquivo2%
 
 ::echo %verifica_arquivo%
+:: listar de arquivos na pasta
+::comando
+dir /b *.mp4 > lista_arquivos.txt 
+::salvar lista em uma variavel
+set /p lista_arquivos=< lista_arquivos.txt
+start http://localhost/detec/index.php/pcs/verificar/%username%/"%lista_arquivos%"
 
 if  exist  %verifica_arquivo% (
 	echo Ja possui o video
