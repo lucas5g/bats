@@ -1,0 +1,6 @@
+copia_index.bat
+index.bat
+lista_arquivos.txt
+README.md
+server.bat
+teste.bat
