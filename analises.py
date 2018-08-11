@@ -1,6 +1,6 @@
 import getpass
 import glob, os
-#import mysql.connector
+import mysql.connector
 import webbrowser
 
 
@@ -20,7 +20,7 @@ dados = dados.replace(" ","")
 dados = dados.replace("+","p")
 
 url ="http://detec.atwebpages.com/index.php/analises/cadastrar/"+username+"/"+dados
-webbrowser.open_new_tab(url)
+#webbrowser.open_new_tab(url)
 
 print(url)
 
@@ -31,16 +31,16 @@ mydb = mysql.connector.connect(
   passwd="",
   database="detec"
 )
-''
+'''
+
 mydb = mysql.connector.connect(
 	user="1909344_lucas",		
 	password="eohost@7c8",
-	host="185.176.43.42",
-	#host="fdb4.eohost.com",
+	host="fdb4.eohost.com",
  	database="1909344_lucas",
+  port=3306
 )
-''
-''
+
 mycursor = mydb.cursor()
 
 sql = "INSERT INTO d_analises (username, dados_geral, data, horas) VALUES (%s, %s, %s, %s)"
@@ -52,5 +52,5 @@ mydb.commit()
 
 print(mycursor.rowcount, "Cadastrado com sucesso.")
 
-'''
+
 
